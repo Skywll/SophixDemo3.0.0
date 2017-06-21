@@ -4,7 +4,9 @@ repositories {
 //    mavenLocal()
     //百川仓库
     maven {
-        url "http://repo.baichuan-android.taobao.com/content/groups/BaichuanRepositories"
+        //url "http://repo.baichuan-android.taobao.com/content/groups/BaichuanRepositories"//2.0
+        url "http://maven.aliyun.com/nexus/content/repositories/releases"//3.0
+
     }
 //    mavenCentral()
 //    jcenter()
@@ -39,7 +41,10 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.taobao.android:alisdk-hotfix:2.0.8'
+    //热修复2.0
+    //compile 'com.taobao.android:alisdk-hotfix:2.0.8'
+    //热修复3.0
+    compile 'com.aliyun.ams:alicloud-android-hotfix:3.0.2'
 
     testCompile 'junit:junit:4.12'
 }

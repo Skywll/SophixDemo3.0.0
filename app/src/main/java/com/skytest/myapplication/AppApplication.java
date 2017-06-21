@@ -36,10 +36,10 @@ public class AppApplication extends Application {
                         } else if (code == PatchStatus.CODE_LOAD_FAIL) {
                             Log.d(TAG, "onload() returned: " + "内部引擎异常, 推荐此时清空本地补丁, 防止失败补丁重复加载");
                             // 内部引擎异常, 推荐此时清空本地补丁, 防止失败补丁重复加载
-                            // SophixManager.getInstance().cleanPatches();
+                              SophixManager.getInstance().cleanPatches();
                         } else {
                             // 其它错误信息, 查看PatchStatus类说明
-                            Log.d(TAG, "onload() returned: " + "其它错误信息, 查看PatchStatus类说明");
+                            Log.d(TAG, "onload() returned: code" + code+" 其它错误信息, 查看PatchStatus类说明");
                         }
                     }
                 }).initialize();
