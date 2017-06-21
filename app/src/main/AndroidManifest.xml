@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.skytest.myapplication">
-    <!--<! &#45;&#45; 网络权限 &ndash;&gt;-->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <!--<! &#45;&#45; 外部存储读权限 &ndash;&gt;-->
+
+    <!-- <! &#45;&#45; 网络权限 &ndash;&gt; -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- <! &#45;&#45; 外部存储读权限 &ndash;&gt; -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
     <application
+        android:name=".AppApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".AppApplication"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -24,16 +24,23 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.taobao.android.hotfix.IDSECRET"
-            android:value="116604-1" />
+            android:value="116604-1"/>
         <meta-data
             android:name="com.taobao.android.hotfix.APPSECRET"
-            android:value="7aff9220bba7748dcf3e49e9b99964e7" />
+            android:value="7aff9220bba7748dcf3e49e9b99964e7"/>
         <meta-data
             android:name="com.taobao.android.hotfix.RSASECRET"
-            android:value="MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCvhtReUqkeqFx7FjM5SsuD/YCIIVQEvs3qhad+86/3MdGRbwS66Kqp8NYGo/olJqQMNOpMPTM1O58NIHgZKyyZ1+pUVOFt1XyykDMbFrV1YkTzd7zQFbpCZGpxEfromWBk372i7/heIgZTHAo1BtIEB2o3JkcNyzLVtVj768lzq3iVCDGl1ChnHOAIRb6j2ZaQlcWIDcevwhtf+ZwZ9ym1MslD+Do+syqL1YrMyDv1boSu6mNil78IWWFjL73EOv9pzLFs8TiQMvfsf2OUA1ruDWSQZVjHz1dbycCSEMSFGO+rGZiRieiHjiEnc6ifrDQqMUkQOjVxHNkeSWW7UPshAgMBAAECggEALEAnhef87tevCPDd1RHAIPRl1OviDJg1vWwYf+7ba8xJcwqz/JLvg4xNyLrKM1d8f/9PGg1LvZ3cSSjoXh/+TIKcdso3UsNBfprP54JgGMm/bEnBdgwkOtyp4PuRb9ZK8ONfIZax3LljMsyc3iVsCMv9wQ2LWDTkCfCAEHKvBNPIMdkjhdZsaQ6ONaRL2UX7Y7/IkwvZqY7hNiTLXwQhGh1cPfZQ2BqlWJi/WfimKyr6Yh3vhG07HXQAWyXdmgvRhH28iy4F1o2hvima+FapLXEMpYP6z9WaibpgvuC+2tizwwjp3uYIZqy+U85gF+Cl2GCJO2XB6rwJHZLcKGZX4QKBgQDtLscPhq74KGNlheOMRR9rp5Y13aHZ5otx/8GMUuFvRdkLAGnE6A689pAExp1xWOn0UzUR9loJQndprGvCahpjk7dXRVkuf57HQsEDqIYLVnjVI6yZoho7A0WVLD6yxjLmrfDW7OsTeeztUDvc1HpT7A/GTmF42UYarPVf60R21QKBgQC9c86TpnGqWYPZFaqYTKnLj6t7qjqlOA1/D15fHMbz0qHRbPL5YEG8lfOus5TdVOJvvajVzVlUDdpQ+bLFdq1eEgcUyYCoaNf9SVjWVGSW1Y4FLJCUcoXQ1gHqXQcQix9ywiVNd9+z+h6xPp4HwOUe2wWwT+KCQ6R7a2jh6G3xHQKBgDci762BTr1rjie0p0AddX9uNvIQsqZX/MSkgtbfEX7vitQO5Yebtolg+/vQPBt0YvakPSsOzMFoTSAor+hDCB1r4mwMN/4iNsP1la8HBxotoOtTXrVcRKLBUPSrk2u1vXF4sAsWilM9vcExLKlaT5Ggx83+vJP+VlivKl+A7qp9AoGABZruirnK9SJO31ZfxL/H6kjm5vLDZ24AIDlBLok4bbBWr06M5cnuR/kby5humBnR1UKEQ0cfFHiQdALfQi5ftL/Ny9SmZNUtRsYrxbObgkbxO7/0yx+US/h4+Akmk1u6Y3fRCLi6OqX00IOsw0f2v3H1eiDy7622qRwlb0GkNxUCgYAncJJBdh2a6mR237TYn8DTIb7n4QAsAMj1M9v58jcWYW7gGeoQ5+gjEsFd+e/FqSFBGZmL4l3xItbKlOH+YMtuM/OqbZq0Z6o1kbwNtilspeCGGbMffai2k7NjA6bbvtMAQmaHmj4Yau0mBRe12qaau3/lFsODk6rnQ7zgu5IzHA==" />
+            android:value="MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCvhtReUqkeqFx7FjM5SsuD/YCIIVQEvs3qhad+86/3MdGRbwS66Kqp8NYGo/olJqQMNOpMPTM1O58NIHgZKyyZ1+pUVOFt1XyykDMbFrV1YkTzd7zQFbpCZGpxEfromWBk372i7/heIgZTHAo1BtIEB2o3JkcNyzLVtVj768lzq3iVCDGl1ChnHOAIRb6j2ZaQlcWIDcevwhtf+ZwZ9ym1MslD+Do+syqL1YrMyDv1boSu6mNil78IWWFjL73EOv9pzLFs8TiQMvfsf2OUA1ruDWSQZVjHz1dbycCSEMSFGO+rGZiRieiHjiEnc6ifrDQqMUkQOjVxHNkeSWW7UPshAgMBAAECggEALEAnhef87tevCPDd1RHAIPRl1OviDJg1vWwYf+7ba8xJcwqz/JLvg4xNyLrKM1d8f/9PGg1LvZ3cSSjoXh/+TIKcdso3UsNBfprP54JgGMm/bEnBdgwkOtyp4PuRb9ZK8ONfIZax3LljMsyc3iVsCMv9wQ2LWDTkCfCAEHKvBNPIMdkjhdZsaQ6ONaRL2UX7Y7/IkwvZqY7hNiTLXwQhGh1cPfZQ2BqlWJi/WfimKyr6Yh3vhG07HXQAWyXdmgvRhH28iy4F1o2hvima+FapLXEMpYP6z9WaibpgvuC+2tizwwjp3uYIZqy+U85gF+Cl2GCJO2XB6rwJHZLcKGZX4QKBgQDtLscPhq74KGNlheOMRR9rp5Y13aHZ5otx/8GMUuFvRdkLAGnE6A689pAExp1xWOn0UzUR9loJQndprGvCahpjk7dXRVkuf57HQsEDqIYLVnjVI6yZoho7A0WVLD6yxjLmrfDW7OsTeeztUDvc1HpT7A/GTmF42UYarPVf60R21QKBgQC9c86TpnGqWYPZFaqYTKnLj6t7qjqlOA1/D15fHMbz0qHRbPL5YEG8lfOus5TdVOJvvajVzVlUDdpQ+bLFdq1eEgcUyYCoaNf9SVjWVGSW1Y4FLJCUcoXQ1gHqXQcQix9ywiVNd9+z+h6xPp4HwOUe2wWwT+KCQ6R7a2jh6G3xHQKBgDci762BTr1rjie0p0AddX9uNvIQsqZX/MSkgtbfEX7vitQO5Yebtolg+/vQPBt0YvakPSsOzMFoTSAor+hDCB1r4mwMN/4iNsP1la8HBxotoOtTXrVcRKLBUPSrk2u1vXF4sAsWilM9vcExLKlaT5Ggx83+vJP+VlivKl+A7qp9AoGABZruirnK9SJO31ZfxL/H6kjm5vLDZ24AIDlBLok4bbBWr06M5cnuR/kby5humBnR1UKEQ0cfFHiQdALfQi5ftL/Ny9SmZNUtRsYrxbObgkbxO7/0yx+US/h4+Akmk1u6Y3fRCLi6OqX00IOsw0f2v3H1eiDy7622qRwlb0GkNxUCgYAncJJBdh2a6mR237TYn8DTIb7n4QAsAMj1M9v58jcWYW7gGeoQ5+gjEsFd+e/FqSFBGZmL4l3xItbKlOH+YMtuM/OqbZq0Z6o1kbwNtilspeCGGbMffai2k7NjA6bbvtMAQmaHmj4Yau0mBRe12qaau3/lFsODk6rnQ7zgu5IzHA=="/>
 
+        <service
+            android:name=".MyService"
+            android:process="com.test"
+            android:enabled="true"
+            android:exported="true">
+        </service>
     </application>
 
 </manifest>
