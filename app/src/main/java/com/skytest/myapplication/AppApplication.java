@@ -166,6 +166,7 @@ public class AppApplication extends Application {
      */
     public static Activity currentActivity() {
         if (mActivitys == null || mActivitys.isEmpty()) {
+
             return null;
         }
         Activity activity = mActivitys.get(mActivitys.size() - 1);
