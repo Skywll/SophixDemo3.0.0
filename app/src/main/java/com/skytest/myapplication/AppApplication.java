@@ -40,7 +40,7 @@ public class AppApplication extends Application {
                     @Override
                     public void onLoad(final int mode, final int code, final String info, final int handlePatchVersion) {
                         // 补丁加载回调通知
-                        Log.d(TAG, "onLoad: 线程名" + Thread.currentThread().getName());
+                       Log.d(TAG, "onLoad: 线程名....." + Thread.currentThread().getName()+" ,code:"+code+" ,handlePatchVersion:"+handlePatchVersion+" ,info"+info);
                         if (code == PatchStatus.CODE_LOAD_SUCCESS) {
                             Log.d(TAG, "onload() returned: " + "表明补丁加载成功");
                             // 表明补丁加载成功
@@ -49,14 +49,17 @@ public class AppApplication extends Application {
                             // 表明新补丁生效需要重启. 开发者可提示用户或者强制重启;
                             // 建议: 用户可以监听进入后台事件, 然后应用自杀
 
-                            //获取当前的activity
+                            //获取当前的activity这个回调是发生在子线程中的
+                            // FIXME: 2017/6/22 有一个bug就是可能出现activity没有的情况...其实可以修改一下,发一个粘性广播出去,在activity中执行就可以了
                             final Activity activity = currentActivity();
+                                 Log.d(TAG, "activity:" + activity);
                             if (activity != null) {
                                 activity.runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
                                         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
                                         builder.setTitle("测试");
+                                        builder.setMessage("是否重启app");
                                         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
                                             @Override
                                             public void onClick(DialogInterface dialog, int which) {
